@@ -13,7 +13,14 @@
 |---|---|
 | `early-failure.gif` | 早期评测失败：策略未正确加载时下沉、停止 |
 | `flat-walk-validated.gif` | 修复评测链路后的平地行走验证 |
-| `stairs-evaluation.gif` | 8000 迭代 checkpoint 的复杂地形行走片段 |
+| `large-stair-failure.gif` | 早期较大台阶首次尝试，机器人无法通过 |
+| `low-stair-first-attempt.gif` | 早期低台阶第一次尝试，机器人摔倒 |
+| `low-stair-second-attempt.gif` | 早期低台阶第二次尝试，机器人勉强完成跨越 |
+| `rough-slope.gif` | `model_8000.pt` 在平滑斜坡上的代表性片段 |
+| `rough-random.gif` | `model_8000.pt` 在随机起伏地形上的代表性片段 |
+| `rough-stairs.gif` | `model_8000.pt` 在楼梯地形上的代表性片段 |
+| `rough-discrete.gif` | `model_8000.pt` 在离散障碍地形上的代表性片段 |
+| `stairs-evaluation.gif` | 8000 迭代 checkpoint 的复杂地形行走片段，保留作总览 |
 
 ## 平地行走验证（checkpoint `model_3000.pt`，指令 0.3 m/s）
 

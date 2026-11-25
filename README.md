@@ -12,6 +12,14 @@
 
 ![早期失败：下沉并停止](media/early-failure.gif)
 
+### 台阶能力：从无法通过到勉强跨越
+
+早期的台阶测试也暴露出明显的脆弱性：面对较大的台阶时，机器人第一次尝试直接无法通过；面对较低的台阶时，第一次尝试摔倒，第二次尝试才勉强完成跨越。这说明策略开始出现地形适应能力，但当时还不能称为稳定的台阶行走策略。
+
+| 大台阶首次尝试 | 低台阶第一次尝试 | 低台阶第二次尝试 |
+|---|---|---|
+| ![大台阶首次尝试失败](media/large-stair-failure.gif) | ![低台阶第一次尝试摔倒](media/low-stair-first-attempt.gif) | ![低台阶第二次尝试勉强成功](media/low-stair-second-attempt.gif) |
+
 ### 中期：平地行走链路打通
 
 修复权重加载、观测 command 同步和评测计数后，平地策略通过统一行为门槛：20/20 个 episode 跑满 1000 步，平均前向速度 0.266 m/s，目标速度 0.3 m/s，最低机身高度 0.351 m。
@@ -22,7 +30,11 @@
 
 `go2_ts` 在 4096 个并行环境上训练 8000 次迭代，约 7.9 亿环境步。策略已经可以在斜坡、起伏、楼梯和离散障碍地形上持续行走，并完成部分台阶攀爬；但跨全部地形保持低摔倒率仍未达到目标，因此该 checkpoint 作为当前能力基线，不宣称为全地形鲁棒策略。
 
-![粗糙地形行走与台阶评测](media/stairs-evaluation.gif)
+| 斜坡 | 随机起伏 | 楼梯 | 离散障碍 |
+|---|---|---|---|
+| ![斜坡行走](media/rough-slope.gif) | ![随机起伏地形行走](media/rough-random.gif) | ![楼梯地形行走](media/rough-stairs.gif) | ![离散障碍地形行走](media/rough-discrete.gif) |
+
+这些 GIF 是从 `model_8000.pt` 的连续地形评测视频中截取的代表性片段；完整结果仍以各地形的距离、到达档位和退出原因为准。
 
 完整视频见 [Hugging Face 视频仓库](https://huggingface.co/A2bao/go2-quadruped-locomotion/tree/main/videos)。
 
