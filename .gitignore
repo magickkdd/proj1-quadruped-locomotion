@@ -4,6 +4,8 @@ __pycache__/
 # 大文件：checkpoint 与视频走 Hugging Face
 *.pt
 *.mp4
+*.gif
+!media/*.gif
 *.zip
 
 # 构建产物

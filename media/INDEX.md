@@ -7,6 +7,14 @@
 本地 `media/` 目录保留同名副本。
 下表是文件名与对应的测试条件。
 
+## README 动图
+
+| 文件 | 说明 |
+|---|---|
+| `early-failure.gif` | 早期评测失败：策略未正确加载时下沉、停止 |
+| `flat-walk-validated.gif` | 修复评测链路后的平地行走验证 |
+| `stairs-evaluation.gif` | 8000 迭代 checkpoint 的复杂地形行走片段 |
+
 ## 平地行走验证（checkpoint `model_3000.pt`，指令 0.3 m/s）
 
 | 文件 | 说明 |

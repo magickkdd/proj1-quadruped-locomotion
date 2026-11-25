@@ -1,130 +1,115 @@
-# Unitree Go2 复杂地形鲁棒运动控制（Isaac Gym 仿真）
+# Unitree Go2 四足机器人复杂地形运动控制
 
-基于 `LeggedGym-Ex` + `Isaac Gym Preview 4` 复现并改造 Unitree Go2 的四足强化学习训练链路：
-环境自举、PPO 训练、地形课程、域随机化、checkpoint 评测、连续地形行走录制。
+基于 `LeggedGym-Ex` 与 `Isaac Gym`，在 NVIDIA A100 上复现 Unitree Go2 的强化学习运动控制训练、评测和视频记录链路。
 
-> 全部结果均为 **Isaac Gym 纯仿真**，未做真机部署。
+> 结果均来自 Isaac Gym 仿真，未做真机部署。
 
-## 当前状态
+## 结果演进
 
-| 能力 | 状态 | 证据 |
-|---|---|---|
-| 平地稳定行走 | ✅ 已通过 | `results/flat-walk/`：20/20 episode 满 1000 步，平均速度 0.266 m/s（指令 0.3），最低机身高度 0.351 m |
-| 粗糙地形训练 | ⚠️ 可训练、可评测 | `results/rough-8000/`：8000 迭代，4096 环境，约 7.9 亿环境步 |
-| 粗糙地形稳定通过 | ❌ 未达标 | 同上：平均 episode 长度 290/1000，摔倒率 100% |
-| 阶梯连续攀爬 | ❌ 未达标 | `results/level-sweep/`：10 类地形从第 0 档连续走，最远 39.5 m，多数在 2~20 m 内摔倒 |
-| Walk These Ways 配置 | ⏳ 已打包待训 | `scripts/train_wtw_job.sh` |
+### 早期：机器人无法稳定行走
 
-结论直说：**平地行走链路已经打通并可复现；复杂地形仍处在“能训、能评、不稳定”的阶段。**
+早期训练日志中的 reward 看起来正常，但视频里 Go2 开局下沉、坐下或不前进。排查后确认评测端没有真正加载 checkpoint，使用了随机初始化的策略。
+
+![早期失败：下沉并停止](media/early-failure.gif)
+
+### 中期：平地行走链路打通
+
+修复权重加载、观测 command 同步和评测计数后，平地策略通过统一行为门槛：20/20 个 episode 跑满 1000 步，平均前向速度 0.266 m/s，目标速度 0.3 m/s，最低机身高度 0.351 m。
+
+![平地行走验证通过](media/flat-walk-validated.gif)
+
+### 后期：8000 迭代粗糙地形策略能够行走
+
+`go2_ts` 在 4096 个并行环境上训练 8000 次迭代，约 7.9 亿环境步。策略已经可以在斜坡、起伏、楼梯和离散障碍地形上持续行走，并完成部分台阶攀爬；但跨全部地形保持低摔倒率仍未达到目标，因此该 checkpoint 作为当前能力基线，不宣称为全地形鲁棒策略。
+
+![粗糙地形行走与台阶评测](media/stairs-evaluation.gif)
+
+完整视频见 [Hugging Face 视频仓库](https://huggingface.co/A2bao/go2-quadruped-locomotion/tree/main/videos)。
+
+## 当前结论
+
+| 阶段 | 结论 |
+|---|---|
+| 环境自举 | Python 3.8、PyTorch 2.4.1+cu121、Isaac Gym Preview 4 在 A100 上跑通 |
+| 平地训练与评测 | 已验证通过 |
+| 粗糙地形 8000 迭代 | 能行走，但不同地形能力差异明显 |
+| 分档课程实验 | 已完成，暴露出固定档位训练泛化不足 |
+| 下一步 | 暂停继续训练，转向近期 HIM、HACL、ABS 等方法调研 |
+
+## 关键工程问题
+
+项目重点不是简单运行 PPO，而是建立了完整的训练到评测闭环，并定位了多项真实故障：
+
+- 评测 runner 未加载 checkpoint，导致视频使用随机策略
+- command 写入环境后没有同步到 observation
+- 训练环境数被评测环境数覆盖，导致 manifest 记录错误
+- 评测手动设置出生点，造成机器人嵌入或悬空后立即摔倒
+- 评测 episode 计数未清零，导致通过率被误判为 0%
+- 地形等级存在负索引，多个环境被错误放到同一地块
+- 内置课程的升降阈值对称，表现更接近随机游走而不是“学会后升级”
+- 评测没有限制横向越界，机器人跑到地形外的平地并虚增行走距离
+
+完整的“现象 → 证据 → 根因 → 修复”记录见 [`docs/05-debug-log.md`](docs/05-debug-log.md)。
 
 ## 技术栈
 
-| 项 | 版本 |
+| 项目 | 配置 |
 |---|---|
-| 仿真器 | Isaac Gym Preview 4（`isaacgym` 1.0rc4） |
-| 算法库 | rsl_rl（PPO，teacher-student / privileged 变体） |
-| 训练框架 | LeggedGym-Ex，固定 commit `09283fe0e768274feb79eacacd72f1dd4175c142` |
-| Python | 3.8（conda-pack 打包） |
-| PyTorch | 2.4.1+cu121 |
-| GPU | NVIDIA A100-SXM4-80GB |
-| 并行环境 | 4096（评测 1~30） |
+| 机器人 | Unitree Go2 |
+| 仿真器 | Isaac Gym Preview 4 / 1.0rc4 |
+| 训练框架 | LeggedGym-Ex，commit `09283fe0e768274feb79eacacd72f1dd4175c142` |
+| 算法 | rsl_rl PPO、privileged teacher-student 变体 |
+| 训练资源 | NVIDIA A100-SXM4-80GB |
+| 并行环境 | 4096 |
+| 训练环境 | Python 3.8、PyTorch 2.4.1+cu121 |
 
-本仓库 **不包含** LeggedGym-Ex 源码，请按上面的 commit 自行 clone；也不包含 Isaac Gym 安装包。
+## 评测地形
 
-## 目录结构
+地形网格为 10 行 × 10 列。行表示难度档位，列表示地形类型：
+
+| 地形列 | 类型 |
+|---|---|
+| 0、1 | 平滑斜坡 |
+| 2 | 随机起伏 |
+| 3、4、5 | 楼梯方向 A |
+| 6、7 | 楼梯方向 B |
+| 8、9 | 离散障碍 |
+
+评测从指定档位开始，沿环境的 +X 方向行走，记录净位移、到达档位、最低机身高度、横向偏差和退出原因。评测脚本不会把跑到外围平地的距离计入有效结果。
+
+## 仓库结构
 
 ```text
-proj1-quadruped-locomotion/
-├── docs/
-│   ├── 01-spec.md                 # 项目规格与边界
-│   ├── 02-approach.md             # 技术路线与仓库选型
-│   ├── 03-platform-adaptation.md  # 训练平台资源与环境适配
-│   ├── 04-flat-baseline-notes.md  # 平地基线记录
-│   └── 05-debug-log.md            # 故障排查记录（现象→证据→根因→修复）
-├── scripts/                       # 训练、评测、录制、环境自举
-├── configs/                       # Go2 训练配置快照
-├── results/                       # 各轮运行的日志、CSV、summary
-├── media/                         # 评测视频索引（视频文件本身在 Hugging Face）
-└── packages/                      # 可提交训练的整合包索引
+docs/       规格、方案、平台适配和故障记录
+scripts/    训练、评测、录制和环境脚本
+configs/    Go2 配置快照
+results/    训练与评测日志、CSV、summary
+media/      README GIF 与视频索引
+packages/   历史提交包、启动命令和 SHA256
 ```
+
+上游 `LeggedGym-Ex` 源码和 Isaac Gym 安装包不包含在仓库中，请按固定 commit 和项目文档准备环境。
 
 ## 快速开始
 
-平台侧只需要一条命令，代码包上传后自动解压到 `/code/workspace`：
+平台上传任务包后，代码自动解压到 `/code/workspace`，按包索引中的命令启动：
 
 ```bash
-# 平地策略训练 + 评测 + 录制
 bash /code/workspace/scripts/train_eval_record_job.sh
-
-# Walk These Ways 粗糙地形训练 + 连续地形评测
-bash /code/workspace/scripts/train_wtw_job.sh
-
-# 只用已有 checkpoint 做连续地形评测
 bash /code/workspace/scripts/eval_level_sweep_entry.sh
 ```
 
-产物统一落在：
+训练 checkpoint、日志、CSV 和视频分别保存到 `/data/proj1/runs/`、`/data/proj1/results/` 和 `/data/proj1/media/`。
 
-```text
-/data/proj1/runs/<run_id>/           # checkpoint、每阶段训练日志
-/data/proj1/results/<run_id>.log     # 主日志
-/data/proj1/media/<run_id>/          # 视频、CSV
-```
+## 资料
 
-## 评测协议
-
-1. 锁定地形列（10 类地形）与起始档位（第 0 档）
-2. 指令固定 0.4 m/s，沿 +X 连续行进（+X 即难度递增方向）
-3. 横向纠偏保持在当前地形列内，越界或摔倒立即终止
-4. 记录 `distance_x`、`reached_row`、`max_lateral_dev`、`exit_reason`
-
-这套协议来自对仓库源码的核对：`env_origin_x = (row + 0.5) * 8 m`，`step_height = 0.05 + 0.2 * difficulty`，`difficulty = row / 10`。
-
-## 地形构成
-
-配置 `terrain_proportions = [0.2, 0.1, 0.25, 0.25, 0.2]`，10 列映射为：
-
-| 列 | 地形 |
-|---|---|
-| 0、1 | 平滑斜坡（两个方向） |
-| 2 | 随机起伏 |
-| 3、4、5 | 楼梯（一个方向） |
-| 6、7 | 楼梯（另一个方向） |
-| 8、9 | 离散障碍块 |
-
-每列有 10 个难度档，第 0 档最简单（5 cm 台阶 / 0° 坡），第 9 档最难（23 cm 台阶 / 20.6° 坡）。
-
-## 主要结果
-
-**平地行走（已验证）**
-
-```text
-checkpoint: model_3000.pt
-episodes: 20, 全部满 1000 步
-mean_base_vel_x: 0.266 m/s (指令 0.3)
-mean_min_base_height: 0.351 m
-tracking_ratio: 0.886
-behavior_gate: pass
-```
-
-**粗糙地形 8000 迭代（能力上限基线）**
-
-```text
-task: go2_ts, 4096 envs, 8000 iters ≈ 7.9 亿环境步
-mean episode length: 290 / 1000
-fall_rate: 100%
-连续行走距离: 斜坡 35~40 m，起伏 19 m，楼梯 6~31 m
-```
-
-**关键发现**：训练奖励正常（`tracking_lin_vel ≈ 0.90`、episode 长度 987）但评测立刻摔倒，
-根因是评测端没有真正加载 checkpoint，以及地形课程阈值对称导致随机游走。详见 `docs/05-debug-log.md`。
-
-## 资产
-
-- 视频与 checkpoint 体积较大，托管在 Hugging Face：**https://huggingface.co/A2bao/go2-quadruped-locomotion**（视频在 `videos/` 目录）
-- 视频与测试条件的对照表见 `media/INDEX.md`
-- 可提交训练的整合包见 `packages/INDEX.md`
+- [项目总结与过程记录](docs/06-project-summary.md)
+- [完整故障排查记录](docs/05-debug-log.md)
+- [视频索引](media/INDEX.md)
+- [结果目录说明](results/README.md)
+- [提交包索引](packages/INDEX.md)
+- [Hugging Face 视频与资产](https://huggingface.co/A2bao/go2-quadruped-locomotion)
 
 ## 免责声明
 
-结果仅限 Isaac Gym 仿真环境，未做 sim-to-real 验证。
+所有指标和视频均为仿真结果，不代表真实 Go2 的安全性能，也不构成真机部署建议。
