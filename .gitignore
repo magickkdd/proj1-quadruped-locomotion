@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+
+# 大文件：checkpoint 与视频走 Hugging Face
+*.pt
+*.mp4
+*.zip
+
+# 构建产物
+*.tar.gz
+!packages/INDEX.md
+
+# 环境与缓存
+.venv/
+env/
+logs/
+runs/
+.DS_Store

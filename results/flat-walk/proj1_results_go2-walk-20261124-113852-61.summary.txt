@@ -1,0 +1,11 @@
+task=go2
+checkpoint=3000
+checkpoint_path=/data/proj1/runs/go2-flat-clean-20261124-064851-60/logs/go2/Nov24_06-56-42_simple_rl_isaacgym/model_3000.pt
+command_x=0.300000
+episodes=20
+mean_return=37.678271
+mean_length=1000.000000
+mean_base_vel_x=0.265859
+mean_min_base_height=0.351212
+mean_tracking_ratio=0.886198
+behavior_gate=pass

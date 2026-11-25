@@ -1,0 +1,479 @@
+logs archived, waiting for download...
+===== pod: tj-1c8f37cf83df24e794684e0cd789c65a-node-0-0-65vtl =====
+                   Total timesteps: 57901056
+                    Iteration time: 1.98s
+                        Total time: 1169.43s
+                               ETA: -1052.1s
+################################################################################
+                     [1m Learning iteration 5989/6000 [0m                     
+                       Computation: 51313 steps/s (collection: 1.468s, learning 0.448s)
+               Value function loss: 0.0092
+                    Surrogate loss: -0.0092
+                      Encoder loss: 0.0096
+             Mean action noise std: 0.47
+                       Mean reward: 23.11
+               Mean episode length: 965.81
+      Mean episode rew_action_rate: -0.0681
+Mean episode rew_action_smoothness: -0.1396
+       Mean episode rew_ang_vel_xy: -0.0685
+        Mean episode rew_collision: -0.0328
+          Mean episode rew_dof_acc: -0.0057
+Mean episode rew_dof_close_to_default_stand_still: -0.0296
+   Mean episode rew_dof_pos_limits: -0.0084
+        Mean episode rew_dof_power: -0.0180
+    Mean episode rew_feet_air_time: -0.0030
+Mean episode rew_feet_contact_stand_still: 0.1013
+   Mean episode rew_foot_clearance: 0.1151
+        Mean episode rew_lin_vel_z: -0.0252
+ Mean episode rew_tracking_ang_vel: 0.4018
+ Mean episode rew_tracking_lin_vel: 0.8765
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 57999360
+                    Iteration time: 1.92s
+                        Total time: 1171.34s
+                               ETA: -1053.8s
+################################################################################
+                     [1m Learning iteration 5990/6000 [0m                     
+                       Computation: 52008 steps/s (collection: 1.450s, learning 0.440s)
+               Value function loss: 0.0099
+                    Surrogate loss: -0.0078
+                      Encoder loss: 0.0099
+             Mean action noise std: 0.47
+                       Mean reward: 24.55
+               Mean episode length: 988.55
+      Mean episode rew_action_rate: -0.0699
+Mean episode rew_action_smoothness: -0.1437
+       Mean episode rew_ang_vel_xy: -0.0693
+        Mean episode rew_collision: -0.0211
+          Mean episode rew_dof_acc: -0.0056
+Mean episode rew_dof_close_to_default_stand_still: -0.0304
+   Mean episode rew_dof_pos_limits: -0.0078
+        Mean episode rew_dof_power: -0.0183
+    Mean episode rew_feet_air_time: -0.0032
+Mean episode rew_feet_contact_stand_still: 0.1218
+   Mean episode rew_foot_clearance: 0.1220
+        Mean episode rew_lin_vel_z: -0.0248
+ Mean episode rew_tracking_ang_vel: 0.4176
+ Mean episode rew_tracking_lin_vel: 0.9146
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58097664
+                    Iteration time: 1.89s
+                        Total time: 1173.23s
+                               ETA: -1055.5s
+################################################################################
+                     [1m Learning iteration 5991/6000 [0m                     
+                       Computation: 50821 steps/s (collection: 1.496s, learning 0.438s)
+               Value function loss: 0.0070
+                    Surrogate loss: -0.0094
+                      Encoder loss: 0.0098
+             Mean action noise std: 0.47
+                       Mean reward: 23.94
+               Mean episode length: 993.13
+      Mean episode rew_action_rate: -0.0711
+Mean episode rew_action_smoothness: -0.1442
+       Mean episode rew_ang_vel_xy: -0.0701
+        Mean episode rew_collision: -0.0204
+          Mean episode rew_dof_acc: -0.0061
+Mean episode rew_dof_close_to_default_stand_still: -0.0341
+   Mean episode rew_dof_pos_limits: -0.0078
+        Mean episode rew_dof_power: -0.0193
+    Mean episode rew_feet_air_time: -0.0031
+Mean episode rew_feet_contact_stand_still: 0.1187
+   Mean episode rew_foot_clearance: 0.1194
+        Mean episode rew_lin_vel_z: -0.0274
+ Mean episode rew_tracking_ang_vel: 0.4143
+ Mean episode rew_tracking_lin_vel: 0.9098
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58195968
+                    Iteration time: 1.93s
+                        Total time: 1175.17s
+                               ETA: -1057.3s
+################################################################################
+                     [1m Learning iteration 5992/6000 [0m                     
+                       Computation: 52062 steps/s (collection: 1.444s, learning 0.445s)
+               Value function loss: 0.0086
+                    Surrogate loss: -0.0078
+                      Encoder loss: 0.0097
+             Mean action noise std: 0.48
+                       Mean reward: 23.52
+               Mean episode length: 989.47
+      Mean episode rew_action_rate: -0.0714
+Mean episode rew_action_smoothness: -0.1425
+       Mean episode rew_ang_vel_xy: -0.0712
+        Mean episode rew_collision: -0.0202
+          Mean episode rew_dof_acc: -0.0063
+Mean episode rew_dof_close_to_default_stand_still: -0.0262
+   Mean episode rew_dof_pos_limits: -0.0082
+        Mean episode rew_dof_power: -0.0199
+    Mean episode rew_feet_air_time: -0.0037
+Mean episode rew_feet_contact_stand_still: 0.0897
+   Mean episode rew_foot_clearance: 0.1148
+        Mean episode rew_lin_vel_z: -0.0282
+ Mean episode rew_tracking_ang_vel: 0.4079
+ Mean episode rew_tracking_lin_vel: 0.8967
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58294272
+                    Iteration time: 1.89s
+                        Total time: 1177.05s
+                               ETA: -1059.0s
+################################################################################
+                     [1m Learning iteration 5993/6000 [0m                     
+                       Computation: 52315 steps/s (collection: 1.444s, learning 0.436s)
+               Value function loss: 0.0071
+                    Surrogate loss: -0.0092
+                      Encoder loss: 0.0099
+             Mean action noise std: 0.48
+                       Mean reward: 22.98
+               Mean episode length: 980.86
+      Mean episode rew_action_rate: -0.0697
+Mean episode rew_action_smoothness: -0.1408
+       Mean episode rew_ang_vel_xy: -0.0701
+        Mean episode rew_collision: -0.0245
+          Mean episode rew_dof_acc: -0.0061
+Mean episode rew_dof_close_to_default_stand_still: -0.0255
+   Mean episode rew_dof_pos_limits: -0.0083
+        Mean episode rew_dof_power: -0.0190
+    Mean episode rew_feet_air_time: -0.0038
+Mean episode rew_feet_contact_stand_still: 0.0898
+   Mean episode rew_foot_clearance: 0.1122
+        Mean episode rew_lin_vel_z: -0.0281
+ Mean episode rew_tracking_ang_vel: 0.4012
+ Mean episode rew_tracking_lin_vel: 0.8774
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58392576
+                    Iteration time: 1.88s
+                        Total time: 1178.93s
+                               ETA: -1060.7s
+################################################################################
+                     [1m Learning iteration 5994/6000 [0m                     
+                       Computation: 50324 steps/s (collection: 1.512s, learning 0.442s)
+               Value function loss: 0.0082
+                    Surrogate loss: -0.0075
+                      Encoder loss: 0.0098
+             Mean action noise std: 0.48
+                       Mean reward: 24.11
+               Mean episode length: 997.47
+      Mean episode rew_action_rate: -0.0725
+Mean episode rew_action_smoothness: -0.1460
+       Mean episode rew_ang_vel_xy: -0.0698
+        Mean episode rew_collision: -0.0209
+          Mean episode rew_dof_acc: -0.0063
+Mean episode rew_dof_close_to_default_stand_still: -0.0266
+   Mean episode rew_dof_pos_limits: -0.0080
+        Mean episode rew_dof_power: -0.0199
+    Mean episode rew_feet_air_time: -0.0037
+Mean episode rew_feet_contact_stand_still: 0.1161
+   Mean episode rew_foot_clearance: 0.1185
+        Mean episode rew_lin_vel_z: -0.0278
+ Mean episode rew_tracking_ang_vel: 0.4172
+ Mean episode rew_tracking_lin_vel: 0.9120
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58490880
+                    Iteration time: 1.95s
+                        Total time: 1180.89s
+                               ETA: -1062.5s
+################################################################################
+                     [1m Learning iteration 5995/6000 [0m                     
+                       Computation: 49607 steps/s (collection: 1.535s, learning 0.446s)
+               Value function loss: 0.0098
+                    Surrogate loss: -0.0085
+                      Encoder loss: 0.0096
+             Mean action noise std: 0.48
+                       Mean reward: 24.04
+               Mean episode length: 995.29
+      Mean episode rew_action_rate: -0.0722
+Mean episode rew_action_smoothness: -0.1450
+       Mean episode rew_ang_vel_xy: -0.0711
+        Mean episode rew_collision: -0.0299
+          Mean episode rew_dof_acc: -0.0062
+Mean episode rew_dof_close_to_default_stand_still: -0.0214
+   Mean episode rew_dof_pos_limits: -0.0085
+        Mean episode rew_dof_power: -0.0199
+    Mean episode rew_feet_air_time: -0.0035
+Mean episode rew_feet_contact_stand_still: 0.0955
+   Mean episode rew_foot_clearance: 0.1152
+        Mean episode rew_lin_vel_z: -0.0296
+ Mean episode rew_tracking_ang_vel: 0.4131
+ Mean episode rew_tracking_lin_vel: 0.9025
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58589184
+                    Iteration time: 1.98s
+                        Total time: 1182.87s
+                               ETA: -1064.3s
+################################################################################
+                     [1m Learning iteration 5996/6000 [0m                     
+                       Computation: 52199 steps/s (collection: 1.438s, learning 0.445s)
+               Value function loss: 0.0078
+                    Surrogate loss: -0.0090
+                      Encoder loss: 0.0097
+             Mean action noise std: 0.48
+                       Mean reward: 22.70
+               Mean episode length: 977.36
+      Mean episode rew_action_rate: -0.0699
+Mean episode rew_action_smoothness: -0.1409
+       Mean episode rew_ang_vel_xy: -0.0720
+        Mean episode rew_collision: -0.0336
+          Mean episode rew_dof_acc: -0.0059
+Mean episode rew_dof_close_to_default_stand_still: -0.0228
+   Mean episode rew_dof_pos_limits: -0.0126
+        Mean episode rew_dof_power: -0.0189
+    Mean episode rew_feet_air_time: -0.0034
+Mean episode rew_feet_contact_stand_still: 0.0874
+   Mean episode rew_foot_clearance: 0.1144
+        Mean episode rew_lin_vel_z: -0.0282
+ Mean episode rew_tracking_ang_vel: 0.4042
+ Mean episode rew_tracking_lin_vel: 0.8859
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58687488
+                    Iteration time: 1.88s
+                        Total time: 1184.75s
+                               ETA: -1066.0s
+################################################################################
+                     [1m Learning iteration 5997/6000 [0m                     
+                       Computation: 51426 steps/s (collection: 1.469s, learning 0.442s)
+               Value function loss: 0.0072
+                    Surrogate loss: -0.0083
+                      Encoder loss: 0.0100
+             Mean action noise std: 0.48
+                       Mean reward: 22.95
+               Mean episode length: 992.61
+      Mean episode rew_action_rate: -0.0748
+Mean episode rew_action_smoothness: -0.1484
+       Mean episode rew_ang_vel_xy: -0.0761
+        Mean episode rew_collision: -0.0391
+          Mean episode rew_dof_acc: -0.0064
+Mean episode rew_dof_close_to_default_stand_still: -0.0322
+   Mean episode rew_dof_pos_limits: -0.0112
+        Mean episode rew_dof_power: -0.0211
+    Mean episode rew_feet_air_time: -0.0032
+Mean episode rew_feet_contact_stand_still: 0.1017
+   Mean episode rew_foot_clearance: 0.1128
+        Mean episode rew_lin_vel_z: -0.0321
+ Mean episode rew_tracking_ang_vel: 0.4083
+ Mean episode rew_tracking_lin_vel: 0.8843
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58785792
+                    Iteration time: 1.91s
+                        Total time: 1186.66s
+                               ETA: -1067.8s
+################################################################################
+                     [1m Learning iteration 5998/6000 [0m                     
+                       Computation: 52226 steps/s (collection: 1.439s, learning 0.443s)
+               Value function loss: 0.0100
+                    Surrogate loss: -0.0070
+                      Encoder loss: 0.0097
+             Mean action noise std: 0.48
+                       Mean reward: 24.73
+               Mean episode length: 993.17
+      Mean episode rew_action_rate: -0.0719
+Mean episode rew_action_smoothness: -0.1450
+       Mean episode rew_ang_vel_xy: -0.0759
+        Mean episode rew_collision: -0.0279
+          Mean episode rew_dof_acc: -0.0062
+Mean episode rew_dof_close_to_default_stand_still: -0.0244
+   Mean episode rew_dof_pos_limits: -0.0094
+        Mean episode rew_dof_power: -0.0197
+    Mean episode rew_feet_air_time: -0.0040
+Mean episode rew_feet_contact_stand_still: 0.1062
+   Mean episode rew_foot_clearance: 0.1166
+        Mean episode rew_lin_vel_z: -0.0293
+ Mean episode rew_tracking_ang_vel: 0.4125
+ Mean episode rew_tracking_lin_vel: 0.9049
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58884096
+                    Iteration time: 1.88s
+                        Total time: 1188.55s
+                               ETA: -1069.5s
+################################################################################
+                     [1m Learning iteration 5999/6000 [0m                     
+                       Computation: 52674 steps/s (collection: 1.430s, learning 0.437s)
+               Value function loss: 0.0090
+                    Surrogate loss: -0.0094
+                      Encoder loss: 0.0097
+             Mean action noise std: 0.47
+                       Mean reward: 24.24
+               Mean episode length: 992.55
+      Mean episode rew_action_rate: -0.0703
+Mean episode rew_action_smoothness: -0.1433
+       Mean episode rew_ang_vel_xy: -0.0705
+        Mean episode rew_collision: -0.0204
+          Mean episode rew_dof_acc: -0.0057
+Mean episode rew_dof_close_to_default_stand_still: -0.0270
+   Mean episode rew_dof_pos_limits: -0.0073
+        Mean episode rew_dof_power: -0.0188
+    Mean episode rew_feet_air_time: -0.0037
+Mean episode rew_feet_contact_stand_still: 0.1175
+   Mean episode rew_foot_clearance: 0.1190
+        Mean episode rew_lin_vel_z: -0.0262
+ Mean episode rew_tracking_ang_vel: 0.4153
+ Mean episode rew_tracking_lin_vel: 0.9090
+        Mean episode terrain_level: 9.0000
+        Mean episode max_command_x: 1.0000
+--------------------------------------------------------------------------------
+                   Total timesteps: 58982400
+                    Iteration time: 1.87s
+                        Total time: 1190.41s
+                               ETA: -1071.2s
+stage_end_iteration=6000
+stage=stage_result
+level=9
+attempt=1
+episode_length_avg=987.8
+tracking_reward_avg=0.9006
+terrain_level_avg=9.0000
+mastered=1
+run=Nov25_08-32-22_ts_isaacgym
+ckpt=6000
+stage=level_mastered
+level=9
+run=Nov25_08-32-22_ts_isaacgym
+ckpt=6000
+stage=train_finished
+final_level=9
+stalled=0
+final_run=Nov25_08-32-22_ts_isaacgym
+final_ckpt=6000
+stage=start_eval
+checkpoint_path=/data/proj1/runs/go2-staged-20261125-032658-62/logs/go2_rough/Nov25_08-32-22_ts_isaacgym/model_6000.pt
+eval_package=level_sweep_v1
+eval_id=go2-staged-20261125-032658-62-levelsweep
+checkpoint_path=/data/proj1/runs/go2-staged-20261125-032658-62/logs/go2_rough/Nov25_08-32-22_ts_isaacgym/model_6000.pt
+out_dir=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep
+log=/data/proj1/results/go2-staged-20261125-032658-62-levelsweep.log
+checkpoint=6000
+run_name=Nov25_08-32-22_ts_isaacgym
+stage=apt_install
+stage=xvfb_ready
+display=:99
+stage=env_unpack
+env_dir=/tmp/proj1-runtime-eval/py38
+stage=before_python
+task=go2_ts
+command_x=0.4
+Importing module 'gym_38' (/data/proj1/vendor/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /data/proj1/vendor/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+LEGGED_GYM_ROOT_DIR: /data/proj1/vendor/LeggedGym-Ex
+PyTorch version 2.4.1+cu121
+Device count 1
+/data/proj1/vendor/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /root/.cache/torch_extensions/py38_cu121 as PyTorch extensions root...
+Emitting ninja build file /root/.cache/torch_extensions/py38_cu121/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/2] c++ -MMD -MF gymtorch.o.d -DTORCH_EXTENSION_NAME=gymtorch -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1011\" -isystem /tmp/proj1-runtime-eval/py38/lib/python3.8/site-packages/torch/include -isystem /tmp/proj1-runtime-eval/py38/lib/python3.8/site-packages/torch/include/torch/csrc/api/include -isystem /tmp/proj1-runtime-eval/py38/lib/python3.8/site-packages/torch/include/TH -isystem /tmp/proj1-runtime-eval/py38/lib/python3.8/site-packages/torch/include/THC -isystem /tmp/proj1-runtime-eval/py38/include/python3.8 -D_GLIBCXX_USE_CXX11_ABI=0 -fPIC -std=c++17 -DTORCH_MAJOR=2 -DTORCH_MINOR=4 -c /data/proj1/vendor/isaacgym/python/isaacgym/_bindings/src/gymtorch/gymtorch.cpp -o gymtorch.o 
+[2/2] c++ gymtorch.o -shared -L/tmp/proj1-runtime-eval/py38/lib/python3.8/site-packages/torch/lib -lc10 -ltorch_cpu -ltorch -ltorch_python -o gymtorch.so
+Loading extension module gymtorch...
+Setting seed: 1
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+Generating curriculum terrain...
+body_names: ['base', 'FL_hip', 'FL_thigh', 'FL_calf', 'FL_foot', 'FR_hip', 'FR_thigh', 'FR_calf', 'FR_foot', 'Head_upper', 'Head_lower', 'RL_hip', 'RL_thigh', 'RL_calf', 'RL_foot', 'RR_hip', 'RR_thigh', 'RR_calf', 'RR_foot']
+dof_names: ['FL_hip_joint', 'FL_thigh_joint', 'FL_calf_joint', 'FR_hip_joint', 'FR_thigh_joint', 'FR_calf_joint', 'RL_hip_joint', 'RL_thigh_joint', 'RL_calf_joint', 'RR_hip_joint', 'RR_thigh_joint', 'RR_calf_joint']
+dof_indices: [3, 4, 5, 0, 1, 2, 9, 10, 11, 6, 7, 8]
+Base link index: 0
+Key body names: []
+Key body indices: tensor([], device='cuda:0', dtype=torch.int64)
+stage=env_created
+ActorCritic.__init__ got unexpected arguments, which will be ignored: ['clip_actions']
+Privilege Encoder MLP: Sequential(
+  (0): Linear(in_features=99, out_features=256, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=256, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=99, bias=True)
+)
+History Encoder: Sequential(
+  (0): Linear(in_features=900, out_features=256, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=256, out_features=128, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=128, out_features=99, bias=True)
+)
+Actor MLP: Sequential(
+  (0): Linear(in_features=144, out_features=512, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=512, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=12, bias=True)
+)
+Critic MLP: Sequential(
+  (0): Linear(in_features=885, out_features=1024, bias=True)
+  (1): ELU(alpha=1.0)
+  (2): Linear(in_features=1024, out_features=256, bias=True)
+  (3): ELU(alpha=1.0)
+  (4): Linear(in_features=256, out_features=128, bias=True)
+  (5): ELU(alpha=1.0)
+  (6): Linear(in_features=128, out_features=1, bias=True)
+)
+checkpoint_matched_tensors=29
+policy_call_mode=obs_history
+stage=terrain_start terrain_type=0 label=slope_a
+spawn_x=4.000 spawn_z=0.400
+stage=terrain_done terrain_type=0 distance=21.34 reached_row=2 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_0_slope_a.mp4
+stage=terrain_start terrain_type=1 label=slope_b
+spawn_x=4.000 spawn_z=0.400
+stage=terrain_done terrain_type=1 distance=10.09 reached_row=1 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_1_slope_b.mp4
+stage=terrain_start terrain_type=2 label=rough
+spawn_x=4.000 spawn_z=0.445
+stage=terrain_done terrain_type=2 distance=1.63 reached_row=0 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_2_rough.mp4
+stage=terrain_start terrain_type=3 label=stairs_a
+spawn_x=4.000 spawn_z=0.200
+stage=terrain_done terrain_type=3 distance=4.67 reached_row=0 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_3_stairs_a.mp4
+stage=terrain_start terrain_type=4 label=stairs_a
+spawn_x=4.000 spawn_z=0.200
+stage=terrain_done terrain_type=4 distance=11.22 reached_row=1 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_4_stairs_a.mp4
+stage=terrain_start terrain_type=5 label=stairs_a
+spawn_x=4.000 spawn_z=0.200
+stage=terrain_done terrain_type=5 distance=4.70 reached_row=0 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_5_stairs_a.mp4
+stage=terrain_start terrain_type=6 label=stairs_b
+spawn_x=4.000 spawn_z=0.600
+stage=terrain_done terrain_type=6 distance=2.60 reached_row=0 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_6_stairs_b.mp4
+stage=terrain_start terrain_type=7 label=stairs_b
+spawn_x=4.000 spawn_z=0.600
+stage=terrain_done terrain_type=7 distance=4.91 reached_row=0 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_7_stairs_b.mp4
+stage=terrain_start terrain_type=8 label=discrete
+spawn_x=4.000 spawn_z=0.400
+stage=terrain_done terrain_type=8 distance=3.05 reached_row=0 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_8_discrete.mp4
+stage=terrain_start terrain_type=9 label=discrete
+spawn_x=4.000 spawn_z=0.400
+stage=terrain_done terrain_type=9 distance=2.03 reached_row=0 fell=1 video=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/terrain_9_discrete.mp4
+level_sweep_csv=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep/level_sweep.csv
+result terrain=0 label=slope_a reached_row=2 distance=21.34 fell=1
+result terrain=1 label=slope_b reached_row=1 distance=10.09 fell=1
+result terrain=2 label=rough reached_row=0 distance=1.63 fell=1
+result terrain=3 label=stairs_a reached_row=0 distance=4.67 fell=1
+result terrain=4 label=stairs_a reached_row=1 distance=11.22 fell=1
+result terrain=5 label=stairs_a reached_row=0 distance=4.70 fell=1
+result terrain=6 label=stairs_b reached_row=0 distance=2.60 fell=1
+result terrain=7 label=stairs_b reached_row=0 distance=4.91 fell=1
+result terrain=8 label=discrete reached_row=0 distance=3.05 fell=1
+result terrain=9 label=discrete reached_row=0 distance=2.03 fell=1
+stage=complete
+out_dir=/data/proj1/media/go2-staged-20261125-032658-62-levelsweep
+stage=complete
+log=/data/proj1/results/go2-staged-20261125-032658-62.log

@@ -1,0 +1,16 @@
+rough_train_package=rough_ts_curriculum_v1
+run_dir=/data/proj1/runs/go2-rough-curriculum-6000-20261124-162427-68
+task=go2_ts
+requested_train_envs=4096
+actual_train_envs=4096
+max_iterations=8000
+init_terrain_level=5
+eval_terrain_matrix=4,7,10
+eval_camera_terrain=type_9_level_8
+checkpoint_path=/data/proj1/runs/go2-rough-curriculum-6000-20261124-162427-68/logs/go2_rough/Nov24_16-29-42_ts_isaacgym/model_8000.pt
+checkpoint=8000
+checkpoint_sha256=2a63a67bd63602a3c145da7ae751adcc01e9fde14c0cee636e6f72514392c01c
+log=/data/proj1/results/go2-rough-curriculum-6000-20261124-162427-68.log
+eval_summary=/data/proj1/results/go2-rough-curriculum-6000-20261124-162427-68-matrix.summary.txt
+video=/data/proj1/media/go2-rough-curriculum-6000-20261124-162427-68-matrix.mp4
+finished_at=2026-11-24T23:27:38+00:00

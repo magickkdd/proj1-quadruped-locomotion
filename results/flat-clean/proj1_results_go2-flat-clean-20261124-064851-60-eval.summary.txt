@@ -1,0 +1,6 @@
+task=go2
+checkpoint=3000
+command_x=0.300000
+episodes=20
+mean_return=9.122968
+mean_length=980.150000

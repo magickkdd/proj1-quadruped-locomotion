@@ -1,0 +1,41 @@
+# 视频索引
+
+视频文件不纳入 Git（体积大），请放在 Hugging Face 仓库，或直接使用本地文件。
+下表是文件名与对应的测试条件。
+
+## 平地行走验证（checkpoint `model_3000.pt`，指令 0.3 m/s）
+
+| 文件 | 说明 |
+|---|---|
+| `flat-walk-validated.mp4` | 行走验证通过：20/20 episode 满 1000 步，平均速度 0.266 m/s，最低机身高度 0.351 m |
+
+## 粗糙地形 8000 迭代（task `go2_ts`，指令 0.4 m/s）
+
+| 文件 | 说明 |
+|---|---|
+| `rough-8000-matrix.mp4` | 锁定档位矩阵评测的录制片段 |
+
+## 连续地形行走（checkpoint `model_8000.pt`，从第 0 档沿 +X 连续行进）
+
+| 文件 | 地形 | 距离 | 到达档位 | 结果 |
+|---|---|---|---|---|
+| `terrain_0_slope_a.mp4` | 平滑斜坡 A | 34.97 m | 4 | 摔倒 |
+| `terrain_1_slope_b.mp4` | 平滑斜坡 B | 39.51 m | 4 | 摔倒 |
+| `terrain_2_rough.mp4` | 随机起伏 | 19.09 m | 2 | 摔倒 |
+| `terrain_3_stairs_a.mp4` | 楼梯 A | 12.13 m | 1 | 未摔但卡住 |
+| `terrain_4_stairs_a.mp4` | 楼梯 A | 6.50 m | 0 | 未摔但卡住 |
+| `terrain_5_stairs_a.mp4` | 楼梯 A | 30.91 m | 3 | 摔倒 |
+| `terrain_6_stairs_b.mp4` | 楼梯 B | 7.01 m | 0 | 摔倒 |
+| `terrain_7_stairs_b.mp4` | 楼梯 B | 9.75 m | 1 | 摔倒 |
+| `terrain_8_discrete.mp4` | 离散障碍 | 18.82 m | 2 | 未摔但卡住 |
+| `terrain_9_discrete.mp4` | 离散障碍 | 15.96 m | 1 | 摔倒 |
+
+数据来源：`results/level-sweep/level_sweep_8000.csv`。
+
+## 上传到 Hugging Face
+
+```bash
+huggingface-cli upload <your-org>/<your-repo> media/ videos/ --repo-type model
+```
+
+上传后在 README 顶部补一条链接即可。
