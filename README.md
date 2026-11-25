@@ -121,7 +121,8 @@ fall_rate: 100%
 
 ## 资产
 
-- 视频与 checkpoint 体积较大，放在 Hugging Face，见 `media/INDEX.md`
+- 视频与 checkpoint 体积较大，托管在 Hugging Face：**https://huggingface.co/A2bao/go2-quadruped-locomotion**（视频在 `videos/` 目录）
+- 视频与测试条件的对照表见 `media/INDEX.md`
 - 可提交训练的整合包见 `packages/INDEX.md`
 
 ## 免责声明

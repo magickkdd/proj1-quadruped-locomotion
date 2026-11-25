@@ -1,6 +1,10 @@
 # 视频索引
 
-视频文件不纳入 Git（体积大），请放在 Hugging Face 仓库，或直接使用本地文件。
+视频托管在 Hugging Face：
+**https://huggingface.co/A2bao/go2-quadruped-locomotion/tree/main/videos**
+
+（直链把域名换成 `hf-mirror.com` 可在国内加速下载。）
+本地 `media/` 目录保留同名副本。
 下表是文件名与对应的测试条件。
 
 ## 平地行走验证（checkpoint `model_3000.pt`，指令 0.3 m/s）
@@ -32,10 +36,9 @@
 
 数据来源：`results/level-sweep/level_sweep_8000.csv`。
 
-## 上传到 Hugging Face
+## 上传
 
 ```bash
-huggingface-cli upload <your-org>/<your-repo> media/ videos/ --repo-type model
+HF_ENDPOINT=https://hf-mirror.com huggingface-cli upload \
+  A2bao/go2-quadruped-locomotion ./media videos --repo-type model
 ```
-
-上传后在 README 顶部补一条链接即可。
